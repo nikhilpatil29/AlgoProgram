@@ -73,6 +73,90 @@ class utility:
 		else:
 			return False
 
+	# 4. Function for search a Integer using Binary search
+	# @param ele
+	# @param array
+	# return
+	def binarySearchInteger(self,ele,array):
+		first = 0
+		last = len(array)
+
+		while (first < last):
+			mid = (first+last) / 2
+			print mid
+			if ele < array[mid]:
+				last = mid
+			elif ele > array[mid]:
+				first = mid + 1
+			else:
+				return mid
+		return -1
+
+	# 4. Function for search a String using Binary search
+	# @param ele
+	# @param array
+	# return
+	def binarySearchString(self,ele,array):
+		first = 0
+		last = len(array)
+
+		while (first < last):
+			mid = (first+last) / 2
+			print mid
+			if ele < array[mid]:
+				last = mid
+			elif ele > array[mid]:
+				first = mid + 1
+			else:
+				return mid
+		return -1
+
+	# 4. Function for sorting  a Integer number using Insertion
+	#  sort
+	# @param array
+	# return
+	def insertionSortInteger(self,array):
+		for i in range(0,len(array)):
+			key = array[i]
+			j = i-1
+			while j >= 0 and key < array[j]:
+				array[j+1]=array[j]
+				j -= 1
+			array[j + 1] = key
+		return array
+
+	# 4. Function for sorting  a String number using Insertion
+	#  sort
+	# @param array
+	# return
+	def insertionSortString(self,array):
+		for i in range(0,len(array)):
+			key = array[i]
+			j = i-1
+			while j >= 0 and key < array[j]:
+				array[j+1]=array[j]
+				j -= 1
+			array[j + 1] = key
+		return array
+
+	# 4. Function for sorting  a String number using Bubble
+	#  sort
+	# @param stringArray
+	# return
+	def bubbleSortString(self,stringArray):
+		length = len(stringArray) - 1
+		unsorted = True
+
+		while unsorted:
+			unsorted = False
+			for element in range(0, length):
+				if stringArray[element] > stringArray[element + 1]:
+					temp = stringArray[element + 1]
+					stringArray[element + 1] = stringArray[element]
+					stringArray[element] = temp
+					unsorted = True
+		print stringArray
+
 
 	# 5.Program to find your number using binary search
 	# @param low
@@ -103,9 +187,9 @@ class utility:
 	# return
 	def bubbleSort(self,sortList):
 		temp = 0
-		for i in range(0,len(sortList)-1):
+		for i in range(0,len(sortList)):
 			
-			for j in range(0,len(sortList)-1-i):
+			for j in range(0,len(sortList)-1):
 				
 				if sortList[j] > sortList[j+1]:
 					temp = sortList[j]
